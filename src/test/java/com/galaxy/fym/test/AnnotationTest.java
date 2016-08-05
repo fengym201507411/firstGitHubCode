@@ -95,6 +95,7 @@ public class AnnotationTest {
                                         parameterName = requestParameterName;
                                     }
                                     isMust = requestParam.required();
+                                    defaultValue = requestParam.defaultValue();
                                 }
                                 print("参数名：   " + parameterName);
                                 print("参数类型：   " + parameter.getType());
