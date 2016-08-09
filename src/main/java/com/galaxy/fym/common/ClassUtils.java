@@ -27,23 +27,19 @@ public class ClassUtils {
 
     private final static String UTF_8_ENCODING = "UTF-8";
 
-    public static List<Class<?>> getAnnotationClassList(String packagePath,Class<? extends Annotation> annotation){
-        try {
-            List<Class<?>> classList = new ArrayList<Class<?>>();
-            String dirpath = packagePath.replaceAll("\\.", SLASH);
-            Enumeration<URL> enumeration = Thread.currentThread().getContextClassLoader().getResources(dirpath);
-            while (enumeration.hasMoreElements()){
-                URL url = enumeration.nextElement();
-                String protocol = url.getProtocol();
-                String filePath = URLDecoder.decode(url.getFile(),UTF_8_ENCODING);
-                if(FILE.equals(protocol)){
-                    getClassList(classList,packagePath,filePath,true,annotation);
-                }
+    public static List<Class<?>> getAnnotationClassList(String packagePath,Class<? extends Annotation> annotation) throws IOException{
+        List<Class<?>> classList = new ArrayList<Class<?>>();
+        String dirpath = packagePath.replaceAll("\\.", SLASH);
+        Enumeration<URL> enumeration = Thread.currentThread().getContextClassLoader().getResources(dirpath);
+        while (enumeration.hasMoreElements()){
+            URL url = enumeration.nextElement();
+            String protocol = url.getProtocol();
+            String filePath = URLDecoder.decode(url.getFile(),UTF_8_ENCODING);
+            if(FILE.equals(protocol)){
+                getClassList(classList,packagePath,filePath,true,annotation);
             }
-            return classList;
-        }catch (IOException e){
-            return null;
         }
+        return classList;
     }
 
     private static void getClassList(List<Class<?>> classList,String packageName,String packagePath,boolean isRecursice,Class<? extends Annotation> annotation){
