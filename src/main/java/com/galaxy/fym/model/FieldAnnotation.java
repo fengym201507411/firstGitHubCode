@@ -13,7 +13,21 @@ import java.lang.annotation.*;
 @Documented
 public @interface FieldAnnotation {
 
-    String name() default "";
+    /**
+     * 字段的序号
+     * @return
+     */
+    int sort() default 1;
 
-    FieldEnum type() default FieldEnum.UNKNOW;
+    /**
+     * 字段的描述
+     * @return
+     */
+    String desc() default "";
+
+    /**
+     * 字段的数据类型
+     * @return
+     */
+    Class<?> baseClass() default Object.class;
 }

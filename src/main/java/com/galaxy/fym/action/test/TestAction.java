@@ -1,11 +1,9 @@
 package com.galaxy.fym.action.test;
 
 import com.galaxy.fym.model.FieldAnnotation;
-import com.galaxy.fym.model.FieldEnum;
+import com.galaxy.fym.model.SpringDocument;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.Trigger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,21 +15,23 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by fengyiming on 2016/6/27.
  */
 @Controller
-@RequestMapping(value = "test",name = "主要的action测试类")
+@RequestMapping(value = {"test","test2"})
+@SpringDocument(sort = 100,module = {"测试","注解测试"},desc = "主要的action测试类")
 public class TestAction {
 
-    private final static Logger logger = LoggerFactory.getLogger(TestAction.class);
+    @FieldAnnotation(desc = "日志字段")
+    private Logger logger = LoggerFactory.getLogger(TestAction.class);
 
-    @FieldAnnotation(name = "SIZE参数",type = FieldEnum.UNKNOW)
+    @FieldAnnotation(desc = "全局静态公共SIZE终量")
     public final static Integer TEST_SIZE = 1;
 
-    @FieldAnnotation(name = "公共参数",type = FieldEnum.UNKNOW)
+    @FieldAnnotation(desc = "全局公共ACTION变量")
     public String PUBLIC_TEST_ACTION = "publicTestAction";
 
-    @FieldAnnotation(name = "私有参数",type = FieldEnum.UNKNOW)
+    @FieldAnnotation(desc = "全局私有ACTION变量")
     private String PRIVATE_TEST_ACTION = "privateTestAction";
 
-    @RequestMapping(value = "test",name = "test")
+    @RequestMapping(path = {"asdad","yjyy"})
     @ResponseBody
     public ModelMap test(){
         ModelMap mp = new ModelMap();
@@ -39,7 +39,7 @@ public class TestAction {
         return mp;
     }
 
-    @RequestMapping(value = "test1",name = "test1")
+    @RequestMapping("test1")
     public ModelAndView test1(String id){
         ModelAndView mp = new ModelAndView();
         mp.setViewName("test");

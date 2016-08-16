@@ -1,13 +1,18 @@
 package com.galaxy.fym;
 
 import com.galaxy.fym.common.CommonTest;
+import com.galaxy.fym.common.SpringMVCAnnotationUtils;
 import com.galaxy.fym.front.FrontTest;
 import com.galaxy.fym.job.JobTest;
+import com.galaxy.fym.model.ClassDocument;
 import com.galaxy.fym.pay.Pay;
 import com.galaxy.fym.remote.RemoteTest;
 import com.galaxy.fym.service.ServiceTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by fengyiming on 2016/6/24.
@@ -23,12 +28,7 @@ public class Main {
         logger.error("Main error");
     }
 
-    public static void main(String[] args){
-        Main.out();
-        CommonTest.out();
-        FrontTest.out();
-        JobTest.out();
-        RemoteTest.out();
-        Pay.out();
+    public static void main(String[] args) throws IOException {
+        List<ClassDocument> list = SpringMVCAnnotationUtils.getAllController("com.galaxy.fym");
     }
 }

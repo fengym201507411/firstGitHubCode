@@ -1,11 +1,10 @@
-package com.galaxy.fym.common;
+package com.galaxy.fym.model;
 
 import java.lang.annotation.*;
 
 /**
  * Created by fengyiming on 2016/8/8.
  */
-@Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface SpringDocument {
@@ -19,7 +18,7 @@ public @interface SpringDocument {
     /**
      * 文档的所属模块
      */
-    String module() default "";
+    String[] module() default "";
 
     /**
      * 文档的描述
@@ -31,5 +30,5 @@ public @interface SpringDocument {
      * 数据类型
      * @return
      */
-    Class<?> baseClass();
+    Class<?> baseClass() default Object.class;
 }

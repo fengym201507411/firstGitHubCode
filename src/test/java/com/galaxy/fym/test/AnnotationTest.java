@@ -47,8 +47,7 @@ public class AnnotationTest {
                     print("修饰符:  " + Modifier.toString(field.getModifiers()));
                     FieldAnnotation fieldAnnotation = field.getAnnotation(FieldAnnotation.class);
                     if (null != fieldAnnotation) {
-                        print("参数的名称:   " + fieldAnnotation.name());
-                        print("参数的类型:  " + fieldAnnotation.type().getName());
+                        print("参数的名称:   " + fieldAnnotation.desc());
                     }
                     print("-------------------------------------------");
                 }
