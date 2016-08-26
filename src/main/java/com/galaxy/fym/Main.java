@@ -5,7 +5,6 @@ import com.galaxy.fym.front.FrontTest;
 import com.galaxy.fym.job.JobTest;
 import com.galaxy.fym.pay.Pay;
 import com.galaxy.fym.remote.RemoteTest;
-import com.galaxy.fym.service.ServiceTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
