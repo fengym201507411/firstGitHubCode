@@ -65,4 +65,23 @@ public class Test1 {
         end = System.currentTimeMillis();
         System.out.print("用时：" + (end - start) + "ms");
     }
+
+    public static void test1(){
+        setItemList();
+        Long start = System.currentTimeMillis();
+        int size = 0;
+        for(BigDecimal i : itemList){
+            if(INDEX_VALUE.compareTo(i) == 0){
+                size++;
+            }
+        }
+        System.out.println("总共" + size + "与指定值相同");
+        Long end = System.currentTimeMillis();
+        System.out.println("用时：" + (end - start) + "ms");
+
+        start = System.currentTimeMillis();
+        getIndex(itemList);
+        end = System.currentTimeMillis();
+        System.out.print("用时：" + (end - start) + "ms");
+    }
 }
