@@ -35,6 +35,7 @@ public class Test3 {
         for(int i = 5; i < 14; i++){
             String value = twoStackToQueue.pop();
             System.out.println("出队列：" + value);
+            
         }
     }
 
