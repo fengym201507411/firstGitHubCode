@@ -152,22 +152,22 @@
         </layout>
     </appender>
 
-    <logger name="com.galaxy.fym.common" level="ERROR">
+    <logger name="com.galaxy.fym.mvc.common" level="ERROR">
         <appender-ref ref="commonLog"/>
     </logger>
-    <logger name="com.galaxy.fym.front" level="ERROR">
+    <logger name="com.galaxy.fym.mvc.front" level="ERROR">
         <appender-ref ref="frontLog"/>
     </logger>
-    <logger name="com.galaxy.fym.job" level="INFO">
+    <logger name="com.galaxy.fym.mvc.job" level="INFO">
         <appender-ref ref="jobLog"/>
     </logger>
-    <logger name="com.galaxy.fym.remote" level="INFO">
+    <logger name="com.galaxy.fym.mvc.remote" level="INFO">
         <appender-ref ref="remoteLog"/>
     </logger>
-    <logger name="com.galaxy.fym.service" level="INFO">
+    <logger name="com.galaxy.fym.mvc.service" level="INFO">
         <appender-ref ref="serviceLog"/>
     </logger>
-    <logger name="com.galaxy.fym.pay.Pay" level="INFO">
+    <logger name="com.galaxy.fym.mvc.pay.Pay" level="INFO">
         <appender-ref ref="payLog"/>
     </logger>
 

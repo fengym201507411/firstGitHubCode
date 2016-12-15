@@ -1,10 +1,9 @@
 package com.galaxy.fym.test;
 
-import com.galaxy.fym.common.ClassUtils;
-import com.galaxy.fym.model.FieldAnnotation;
+import com.galaxy.fym.mvc.common.ClassUtils;
+import com.galaxy.fym.mvc.model.FieldAnnotation;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.LocalVariableTableParameterNameDiscoverer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
 import java.lang.reflect.*;
-import java.net.URLDecoder;
 import java.util.List;
 
 /**

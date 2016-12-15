@@ -1,7 +1,7 @@
 package com.galaxy.fym.test;
 
-import com.galaxy.fym.model.FymComparator;
-import com.galaxy.fym.model.FymCompareble;
+import com.galaxy.fym.mvc.model.FymComparator;
+import com.galaxy.fym.mvc.model.FymCompareble;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
