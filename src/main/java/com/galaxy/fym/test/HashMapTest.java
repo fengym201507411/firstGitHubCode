@@ -3,6 +3,7 @@ package com.galaxy.fym.test;
 import com.galaxy.fym.mvc.model.ClassDocument;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -13,7 +14,29 @@ public class HashMapTest {
 
 
     public static void main(String[] args) {
-        Map map = new HashMap();
+        final Map map = new HashMap(10);
+        Runnable thread1 = new Runnable() {
+            public void run() {
+                for (int i = 0; i < 50000; i++) {
+                    map.put(i, i);
+                    System.out.println("1111 add" + i);
+                }
+            }
+        };
+        Runnable thread2 = new Runnable() {
+            public void run() {
+                for (int i = 100000; i < 150000; i++) {
+                    map.put(i, i);
+                    System.out.println("2222 add" + i);
+                }
+            }
+        };
+        thread1.run();
+        thread2.run();
+    }
+
+    private static void map(){
+        Map map = new HashMap(10);
         ClassDocument classDocument1 = new ClassDocument();
         ClassDocument classDocument2 = new ClassDocument();
         classDocument1.setIndex(1);
@@ -30,5 +53,6 @@ public class HashMapTest {
         for (int i = 0; i < 50; i++) {
             map.put(i, i);
         }
+        Map hashtable = new Hashtable();
     }
 }
