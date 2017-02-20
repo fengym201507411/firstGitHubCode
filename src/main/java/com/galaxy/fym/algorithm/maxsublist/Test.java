@@ -42,7 +42,6 @@ public class Test {
         List<Integer> list = new ArrayList<Integer>(size);
         Map<Integer, Boolean> map = new HashMap<Integer, Boolean>(size);
         for (int j = 0; j < radomSize; j++) {
-            scope = scope + 10;
             for (int i = 0; i < radomNum; i++) {
                 int value = random.nextInt(scope);
                 while (map.get(value) != null) {
@@ -51,6 +50,7 @@ public class Test {
                 map.put(value, true);
                 list.add(value);
             }
+            scope = scope + 10;
         }
         return list;
     }
