@@ -22,8 +22,12 @@ public class Search {
             if(CollectionUtils.isNotEmpty(allList)) {
                 for (List<Integer> subList : allList) {
                     int subSize = subList.size();
-                    if (subList.get(subSize - 1) < value) {
-                        newAllList.add(new ArrayList<Integer>(subList));
+                    int last2Value = subList.get(subSize - 1);
+                    if (last2Value < value) {
+                        //如果仅次于，便不用添加了
+                        if(value - last2Value > 1) {
+                            newAllList.add(new ArrayList<Integer>(subList));
+                        }
                         subList.add(value);
                     }
                 }
