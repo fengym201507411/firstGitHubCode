@@ -15,14 +15,12 @@ public class Main {
 
     private static Logger logger = LoggerFactory.getLogger(Main.class);
 
-    public static void out(){
-        logger.debug("Main debug");
-        logger.info("Main info");
-        logger.warn("Main warm");
-        logger.error("Main error");
+    public static void out() throws ClassNotFoundException {
+        Class.forName("asdasd");
     }
 
     public static void main(String[] args) throws IOException {
         List<ClassDocument> list = SpringMVCAnnotationUtils.getAllController("com.galaxy.fym");
     }
+
 }

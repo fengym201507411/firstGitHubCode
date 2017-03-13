@@ -7,8 +7,14 @@ package com.galaxy.fym.test;
 public class Test4 {
 
     public static void main(String[] args) throws Exception {
-        equal();
+        //equal();
+        Integer a = 0;
+        change(a);
+        System.out.println(a);
+    }
 
+    private static void change(Integer a){
+        a = 6;
     }
 
     public static void equal(){
@@ -54,6 +60,5 @@ public class Test4 {
         System.out.println("two same double and Double ==:" + (doubleValue == doubleValue1));
         doubleValue1 = new Double(10);
         System.out.println("two same double and new Double ==:" + (doubleValue == doubleValue1));
-
     }
 }
