@@ -178,6 +178,16 @@
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations-java5</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations-java5</artifactId>
+            <version>RELEASE</version>
+        </dependency>
         <!--定时任务 end-->
     </dependencies>
 </project>

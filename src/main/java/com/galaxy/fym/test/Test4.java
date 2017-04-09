@@ -1,5 +1,10 @@
 package com.galaxy.fym.test;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by fengyiming on 2016/12/8.
  * 分析简单数据类型和它的封装类的== equal的比较
@@ -7,23 +12,23 @@ package com.galaxy.fym.test;
 public class Test4 {
 
     public static void main(String[] args) throws Exception {
-        //equal();
-        Integer a = 0;
-        change(a);
-        System.out.println(a);
+
+        BigDecimal s = new BigDecimal("1.23");
+        System.out.print(new BigDecimal(10D/3D));
     }
 
-    private static void change(Integer a){
+    private static void change(Integer a) {
         a = 6;
     }
 
-    public static void equal(){
+    public static void equal() {
         int intValue = 10;
         int otherIntVlue = 10;
         System.out.println("two same int ==:" + (intValue == otherIntVlue));
         intValue = 128;
         otherIntVlue = 128;
         System.out.println("when int value > 127 ,two same int ==:" + (intValue == otherIntVlue));
+        StringBuffer a = new StringBuffer();
         String stringValue = new String("123");
         String otherStringValue = new String("123");
         System.out.println("two same new string ==:" + (stringValue == otherStringValue));
