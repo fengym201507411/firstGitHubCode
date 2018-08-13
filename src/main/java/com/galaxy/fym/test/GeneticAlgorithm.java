@@ -6,16 +6,16 @@ import java.util.Random;
  * Created by fengyiming on 2018/8/13.
  */
 public class GeneticAlgorithm {
-    double[][] d = { { 0, 4, 6, 7.5, 9, 20, 10, 16, 8 },
-        { 4, 0, 6.5, 4, 10, 5, 7.5, 11, 10 },
-        { 6, 6.5, 0, 7.5, 10, 10, 7.5, 7.5, 7.5 },
-        { 7.5, 4, 7.5, 0, 10, 5, 9, 9, 15 },
-        { 9, 10, 10, 10, 0, 10, 7.5, 7.5, 10 },
-        { 20, 5, 10, 5, 10, 0, 7, 9, 7.5 },
-        { 10, 7.5, 7.5, 9, 7.5, 7, 0, 7, 10 },
-        { 16, 11, 7.5, 9, 7.5, 9, 7, 0, 10 },
-        { 8, 10, 7.5, 15, 10, 7.5, 10, 10, 0 } };
-    double[] q = { 0, 1, 2, 1, 2, 1, 4, 2, 2 };
+    double[][] d = {{0, 4, 6, 7.5, 9, 20, 10, 16, 8},
+        {4, 0, 6.5, 4, 10, 5, 7.5, 11, 10},
+        {6, 6.5, 0, 7.5, 10, 10, 7.5, 7.5, 7.5},
+        {7.5, 4, 7.5, 0, 10, 5, 9, 9, 15},
+        {9, 10, 10, 10, 0, 10, 7.5, 7.5, 10},
+        {20, 5, 10, 5, 10, 0, 7, 9, 7.5},
+        {10, 7.5, 7.5, 9, 7.5, 7, 0, 7, 10},
+        {16, 11, 7.5, 9, 7.5, 9, 7, 0, 10},
+        {8, 10, 7.5, 15, 10, 7.5, 10, 10, 0}};
+    double[] q = {0, 1, 2, 1, 2, 1, 4, 2, 2};
 
     Random random = new Random();
 
@@ -33,22 +33,13 @@ public class GeneticAlgorithm {
     int PSCS = 20;
 
     /**
-     *
-     * @param rows
-     *            排列个数
-     * @param time
-     *            迭代次数
-     * @param mans
-     *            客户数量
-     * @param cars
-     *            货车数量
-     * @param tons
-     *            货车载重
-     * @param distance
-     *            货车最大行驶距离
-     * @param PW
-     *            惩罚因子
-     *
+     * @param rows     排列个数
+     * @param time     迭代次数
+     * @param mans     客户数量
+     * @param cars     货车数量
+     * @param tons     货车载重
+     * @param distance 货车最大行驶距离
+     * @param PW       惩罚因子
      */
     public GeneticAlgorithm(int rows, int time, int mans, int cars, int tons,
                             int distance, int PW) {
@@ -453,4 +444,4 @@ public class GeneticAlgorithm {
             System.out.println();
         }
     }
-
+}
